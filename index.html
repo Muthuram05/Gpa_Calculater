@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="icon/icons8-calculator-66.png" rel="icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Gpa</title>
+</head>
+<body>
+  <nav class="navbar is-dark">
+    <div class="navbar-brand">
+        <a href="index.html" class="navbar-item is-uppercase"><img src="image/anna_univ.png"><strong>Calc</strong></a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="main-navbar">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-navbar">
+        <div class="navbar-start">
+            <div class="navbar-item">
+            </div>
+        </div>
+
+        
+
+          <div class=" navbar-item">
+            <a href="index.html" class="button is-dark is-uppercase is-active">gpa</a>
+            <a href="Cgpa.html" class="button is-dark is-uppercase ">cgpa</a>
+            <a href="contact.html" class="button is-dark is-uppercase">Contact</a>
+        </div>
+    </div>
+</nav>
+<br>
+<div class='full_content'>
+  <!--left-content-->
+  <div class="left-content">
+    <div class="box">
+      <h1 class='has-text-weight-bold'>What is GPA?</h1> 
+      <p>
+        There are various types of grading systems followed depending upon your country and college, such as the 
+        numbering system, percentage system, or letter grade system. GPA is a type of grading system followed in the US, 
+        which tells you how well you have scored in your course on an average as compared to other students.
+        Your GPA is calculated on a scale between 0 to 4.0 and showcases if your grades have been high or low as 
+        compared to your class. Moreover, GPA is calculated over a period, i.e., first semester/term.
+      </p>
+      </div>
+      <div class="box">
+        <p class='has-text-weight-bold' >Name</p>
+        <input type="text" placeholder="Name" id="name" value="NAME">
+        <p class='has-text-weight-bold'>Regulation</p>
+        <select class="select" id="year">
+          <option value="2013">2013</option>
+          <option value="2017" selected>2017</option>
+          <option value="2021">2021</option>
+        </select>
+      </div>
+  <!--input-value-->
+      <div class="box">
+        <div id="input_box" >
+          <h1>GPA CALCULATER</h1>
+          <form >
+          <input type="text" class="subject" placeholder="Subject/Lab Name" required>
+          <input type="text" class="grade" placeholder="Grade" required>
+          <input type="text" class="credit" placeholder="Credits" required>
+          <br><br>
+          <input type="text" class="subject" placeholder="Subject/Lab Name" required>
+          <input type="text" class="grade" placeholder="Grade" required>
+          <input type="text" class="credit" placeholder="Credits" required><br>
+        </form>
+    
+        </div><br>
+          <button onclick="calc();" class="button is-danger">CALCULATE</button>
+          <button id="btn" class="button is-danger">ADD SUBJECT</button><br>
+      </div> 
+    
+    
+      <div class="box result-content" id="result-content">
+        <diV style="display: flex; text-transform: uppercase;"  class='has-text-weight-bold'>
+          <label>NAME:</label>
+          <p id="user-detail"></p>
+        </div>
+        <div style="display: flex; text-transform: uppercase; float: right;"  class='has-text-weight-bold'>
+          <label>REGULATION:</label>
+          <p id='user-reg'></p>
+        </div>
+       
+        <div id="result-table"></div>
+        <p class='has-text-weight-bold is-uppercase'>Result</p>
+        <div style="display: flex;">
+          <h1 >Your GPA is:</h1>
+          <h1 type="text" id="Gpa"></h1>
+        </div>
+        <div style="display: flex;">
+          <h1>Your credit point is:</h1>
+          <h1 id="crt_point"></h1>
+        </div>
+        <div id="editor">
+          <button class="button is-danger" id="generatePDF"> generatePDF</button>
+          <script src="script.js"></script>
+        </div>
+      </div>
+     
+      
+  </div>
+
+<!--right content-->
+  <div class="right-content">
+    <p class='has-text-weight-bold'>Example</p>
+    <div class="example_table">
+    <table class="table is-fullwidth is-bordered is-striped">
+      <tr>
+        <th>subject</th>
+        <td>chemistry</td>
+        <td>physics</td>
+        <td>total</td> 
+      </tr>
+      <tr>
+        <th>grade</th>
+        <td>7</td>
+        <td>10</td>
+        <td>17</td>
+      </tr>
+      <tr>
+        <th>credit</th>
+        <td>3</td>
+        <td>2</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <th>points</th>
+        <td>7 x 3 = 21</td>
+        <td>10 x 2 = 20</td>
+        <td>41</td>
+      </tr>
+      <tr>
+        <th >gpa</th>
+        <td colspan="3">41 / 5=8.2</td>
+      </tr>
+
+    </table>
+    <br>
+    <table class="table is-fullwidth is-bordered is-striped">
+      <tr>
+        <th>subject</th>
+        <td>Python</td>
+        <td>Maths</td>
+        <td>total</td> 
+      </tr>
+      <tr>
+        <th>grade</th>
+        <td>9</td>
+        <td>8</td>
+        <td>17</td>
+      </tr>
+      <tr>
+        <th>credit</th>
+        <td>3</td>
+        <td>4</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <th>points</th>
+        <td>9 x 3 = 27</td>
+        <td>8 x 4 = 32</td>
+        <td>59</td>
+      </tr>
+      <tr>
+        <th >gpa</th>
+        <td colspan="3">59/ 7=8.428</td>
+      </tr>
+
+    </table>
+  </div>
+  </div>
+</div>
+<br>
+<script>
+var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+
+//margins.left, // x coord   margins.top, { // y coord
+$('#generatePDF').click(function () {
+    doc.fromHTML($('#result-content').html(), 15, 15, {
+        'width': 700,
+        'elementHandlers': specialElementHandlers
+    });
+    doc.save('Gpa_result.pdf');
+});
+</script>
+  
+</body>
+</html>

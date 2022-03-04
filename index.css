@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #eee;
+}
+.left-content{
+    width: 70%;
+}
+.right-content{
+    width: 30%;
+}
+.box{
+    width: 80%;
+    margin: auto;    
+}
+.full_content{
+      display: flex;
+}
+input{
+    width: 20%;
+}
+.user-detail{
+    text-transform: uppercase;
+}
+
+/*small size divice */
+@media(max-width:991px){
+    .box{
+        width: 100%;
+        margin: auto;
+      }
+      .full_content{
+          display: inline;
+      }
+
+      .left-content{
+          width: 100%;
+      }
+      .right-content{
+          width: 48%;
+      }
+      table{
+          height: 140px;
+      }
+
+
+
+}

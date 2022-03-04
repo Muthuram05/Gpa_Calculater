@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="icon/icons8-calculator-66.png" rel="icon">
+    <link rel="stylesheet" href="cgpa.css">
+    <title>Cgpa</title>
+</head>
+<body>
+  <nav class="navbar is-dark">
+    <div class="navbar-brand">
+        <a href="index.html" class="navbar-item is-uppercase"><img src="image/anna_univ.png"><strong>Calc</strong></a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="main-navbar">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div class="navbar-menu" id="main-navbar">
+        <div class="navbar-start">
+            <div class="navbar-item">
+            </div>
+        </div>
+
+        
+
+          <div class=" navbar-item">
+            <a href="index.html" class="button is-dark is-uppercase">gpa</a>
+            <a href="#" class="button is-dark is-uppercase is-active ">cgpa</a>
+            <a href="contact.html" class="button is-dark is-uppercase">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<div style="display:flex;">
+  <div class="left-content"></div>
+  <div class="main-content">
+    <h1 class='has-text-weight-bold'>What is CGPA?</h1> 
+  <p>
+    CGPA Calculator finds the Cumulative Grade Points Average of all the subjects excluding the additional subjects. 
+   
+  </p>
+
+  <div class="box">
+<div id="input_box" >
+    <h1>GPA CALCULATER</h1>
+    <input type="text" class="samester_name" placeholder="semester Name">
+    <input type="text" class="sgpa" placeholder="SGPA">
+
+<br><br>
+    <input type="text" class="samester_name" placeholder="semester Name">
+    <input type="text" class="sgpa" placeholder="SGPA">
+    
+</div><br>
+    <button onclick="calc();" class="button is-danger">CALCULATE</button>
+    <button id="btn" class="button is-danger">ADD SUBJECT</button><br>
+  </div> 
+    <script src="cgpa.js"></script>
+    <p class='has-text-weight-bold is-uppercase'>Result</p>
+   <div style="display: flex;">
+     <h1>Your Cgpa is:</h1>
+     <h1 id="Cgpa_result"></h1>
+   </div>
+  </div>
+  <div class="right-content"></div>
+</div>
+  
+</body>
+</html>

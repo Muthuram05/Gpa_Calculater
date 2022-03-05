@@ -31,23 +31,48 @@
           <div class=" navbar-item">
             <a href="index.html" class="button is-dark is-uppercase">gpa</a>
             <a href="#" class="button is-dark is-uppercase is-active ">cgpa</a>
-            <a href="contact.html" class="button is-dark is-uppercase">Contact</a>
+            <a  class="button is-dark is-uppercase" id="myBtn">Contact</a>
         </div>
     </div>
 </nav>
+<div id="myModal" class="modal">
+  
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form action="https://formspree.io/f/xqknbdbl" method="POST" id="my-form">
+
+      <label class="is-uppercase">Email:</label> <br>
+      <input type="email" name="email" required><br>
+     
+      <label class="is-uppercase">Name:</label> <br>
+      <input type="text" name="name" required><br>
+  
+     <label class="is-uppercase">message:</label> <br>
+      <textarea name="message"></textarea><br>
+    <button type="submit" class="button is-success">Send</button>
+    <p id="my-form-status"></p>
+  </form>
+  </div>
+
+</div>
+<style>
+  .box{
+    margin: auto;
+  }
+</style>
 
 <div style="display:flex;">
-  <div class="left-content"></div>
-  <div class="main-content">
+  <div class="main-content box">
+
     <h1 class='has-text-weight-bold'>What is CGPA?</h1> 
-  <p>
-    CGPA Calculator finds the Cumulative Grade Points Average of all the subjects excluding the additional subjects. 
-   
-  </p>
+    <p>
+      CGPA Calculator finds the Cumulative Grade Points Average of all the subjects excluding the additional subjects.  
+    </p>
 
   <div class="box">
 <div id="input_box" >
-    <h1>GPA CALCULATER</h1>
+    <h1>CGPA CALCULATER</h1>
     <input type="text" class="samester_name" placeholder="semester Name">
     <input type="text" class="sgpa" placeholder="SGPA">
 
@@ -66,7 +91,6 @@
      <h1 id="Cgpa_result"></h1>
    </div>
   </div>
-  <div class="right-content"></div>
 </div>
   
 </body>

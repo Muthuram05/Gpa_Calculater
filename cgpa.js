@@ -56,29 +56,66 @@ document.addEventListener('DOMContentLoaded', () => {
     sum=sum/Sgpaarr.length
     console.log(sum)
     document.getElementById("Cgpa_result").innerHTML=sum;
-     /* document.getElementById('Gpa').innerHTML=sum; 
-      document.getElementById('crt_point').innerHTML=Creditpoint;
-      document.getElementById('user-detail').innerHTML=username;
-      document.getElementById('user-reg').innerHTML=userreg
-      var mytable = "<table class='table is-fullwidth is-bordered is-striped'><tr>";
-      {mytable += "<td>subject"+"</td>"}
-      for (var CELL of subarr)
-      {mytable +="<td>" + CELL + "</td>";}
-      mytable += "</tr>";
-      {mytable += "<td>grade"+"</td>"}
-      for (var CELL of gradearr)
-      {mytable +="<td>" + CELL + "</td>";}
-      mytable += "</tr>";
-      {mytable += "<td>credit"+"</td>"}
-      for (var CELL of Creditarr)
-      {mytable +="<td>" + CELL + "</td>";}
-      mytable += "</tr></table>";
-  
-      document.getElementById('result-table').innerHTML=mytable*/
+
   
   }
+      // Get the modal
+      var modal = document.getElementById("myModal");
   
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
 
+      /*submit form*/ 
+      var form = document.getElementById("my-form");
+  
+      async function handleSubmit(event) {
+        event.preventDefault();
+        var status = document.getElementById("my-form-status");
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: {
+              'Accept': 'application/json'
+          }
+        }).then(response => {
+          if (response.ok) {
+            status.innerHTML = "Thanks for your submission!";
+            form.reset()
+          } else {
+            response.json().then(data => {
+              if (Object.hasOwn(data, 'errors')) {
+                status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+              } else {
+                status.innerHTML = "Oops! There was a problem submitting your form"
+              }
+            })
+          }
+        }).catch(error => {
+          status.innerHTML = "Oops! There was a problem submitting your form"
+        });
+      }
+      form.addEventListener("submit", handleSubmit)
   
   
   

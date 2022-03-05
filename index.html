@@ -33,11 +33,32 @@
           <div class=" navbar-item">
             <a href="index.html" class="button is-dark is-uppercase is-active">gpa</a>
             <a href="Cgpa.html" class="button is-dark is-uppercase ">cgpa</a>
-            <a href="contact.html" class="button is-dark is-uppercase">Contact</a>
+            <a id="myBtn" class="button is-dark is-uppercase">Contact</a>
         </div>
     </div>
 </nav>
 <br>
+<div id="myModal" class="modal">
+  
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form action="https://formspree.io/f/xqknbdbl" method="POST" id="my-form">
+
+      <label class="is-uppercase">Email:</label> <br>
+      <input type="email" name="email" required><br>
+     
+      <label class="is-uppercase">Name:</label> <br>
+      <input type="text" name="name" required><br>
+  
+     <label class="is-uppercase">message:</label> <br>
+      <textarea name="message"></textarea><br>
+    <button type="submit" class="button is-success">Send</button>
+    <p id="my-form-status"></p>
+  </form>
+  </div>
+
+</div>
 <div class='full_content'>
   <!--left-content-->
   <div class="left-content">

@@ -45,6 +45,9 @@ input{
       table{
           height: 140px;
       }
+      input{
+        width: 30%;
+    }
 
 
 
